@@ -11,7 +11,7 @@ def main():
         print("4. Update a student's email")
         print("5. Exit")
 
-        choice = input("Enter choice (1–5): ").strip().lower()
+        choice = input("Enter choice (1-5): ").strip().lower()
 
         if choice in ("1", "getallstudents"):
             getAllStudents()
