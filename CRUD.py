@@ -1,8 +1,10 @@
 from connect import get_conn
 
 conn = get_conn()
+# establishing connection
 
 def getAllStudents():
+    """Retrieve and print all students from the database."""
     sql= "select * from students"
     cur = conn.cursor()
 
@@ -14,6 +16,7 @@ def getAllStudents():
     cur.close()
 
 def addStudent(first_name, last_name, email, enrollment_date):
+    """Add a new student to the database."""
     sql="insert into students (first_name, last_name, email, enrollment_date) values (%s, %s, %s, %s)"
 
     cur = conn.cursor()
@@ -24,6 +27,7 @@ def addStudent(first_name, last_name, email, enrollment_date):
     cur.close()
 
 def updateStudentEmail(student_id, new_email: str):
+    """Update a student's email in the database."""
     sql = "update students set email = %s where student_id = %s"
 
     cur = conn.cursor()
@@ -35,6 +39,7 @@ def updateStudentEmail(student_id, new_email: str):
 
 
 def deleteStudent(student_id):
+    """Delete a student from the database."""
     sql="delete from students where student_id = %s;"
 
     cur = conn.cursor()
@@ -43,4 +48,3 @@ def deleteStudent(student_id):
     print(f"deleted student with ID {student_id}")
     conn.commit()
     cur.close()
-
