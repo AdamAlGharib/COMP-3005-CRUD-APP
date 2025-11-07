@@ -52,4 +52,4 @@ main.py
 
 ## Demo Video
 
-link: https://youtu.be/6zuiEmEF1ZY
+link: https://youtu.be/eks8ccGJLT0
