@@ -1,14 +1,17 @@
 import psycopg2
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_conn():
 
     try:
         return psycopg2.connect(
-            host=os.getenv("DB_HOST", "localhost"),
-            database=os.getenv("DB_NAME", "assignment2"),
-            user=os.getenv("DB_USER", "postgres"),
-            port=os.getenv("DB_PORT", "5432")
+            host=os.getenv("DB_HOST"),
+            database=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            port=os.getenv("DB_PORT")
         )
 
     except:
